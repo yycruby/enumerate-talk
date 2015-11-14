@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe 'Array#each' do
+RSpec.describe Array, '#each' do
   it 'yields each item to a block' do
     subject = [1, 2, 3]
     yielded = []
@@ -15,18 +15,18 @@ RSpec.describe 'Array#each' do
   it 'returns the array when a block is passed' do
     subject = [1, 2, 3]
 
-    returned = subject.each do |n|
+    result = subject.each do |n|
       # no-op
     end
 
-    expect(returned).to eq subject
+    expect(result).to eq subject
   end
 
   it 'returns an Enumerator when no block is passed' do
     subject = [1, 2, 3]
 
-    returned = subject.each
+    result = subject.each
 
-    expect(returned).to be_an Enumerator
+    expect(result).to be_an Enumerator
   end
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe 'Array.new' do
+RSpec.describe Array, '.new' do
   it 'builds an Array of specified length' do
     subject = Array.new(3)
 
@@ -20,10 +20,10 @@ RSpec.describe 'Array.new' do
   end
 
   it 'builds a new Array from another Array' do
-    init = [1, 2, 3]
-    subject = Array.new(init)
+    subject = [1, 2, 3]
+    result = Array.new(subject)
 
-    expect(subject).to eq init
-    expect(subject.object_id).to_not eq init.object_id
+    expect(result).to eq subject
+    expect(result.object_id).to_not eq subject.object_id
   end
 end
